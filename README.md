@@ -18,9 +18,11 @@ Medical image datasets are often limited in size and expensive to annotate. Self
 1. **Barlow Twins**  
    - A redundancy-reduction method that encourages embeddings of two augmented views of the same image to be highly correlated while minimizing redundancy between dimensions.  
    - Objective:  
+
      $$
      \mathcal{L} = \sum_i (1 - C_{ii})^2 + \lambda \sum_{i} \sum_{j \neq i} C_{ij}^2
      $$
+     
      where $C$ is the cross-correlation matrix between embeddings.
 
 2. **SimCLR**  
