@@ -5,7 +5,8 @@ This project explores **self-supervised learning (SSL)** techniques for medical 
 
 We implement both methods, apply them to multiple datasets from MedMNIST, and analyze their performance through **fine-tuning experiments** on classification tasks.  
 
-Credits : Project done in colaboration with [Daniel Akbarinia](https://github.com/Daniel34990) and [Judith Amigo](https://github.com/crocojude).
+#### >>> Credits : Project done in colaboration with [Daniel Akbarinia](https://github.com/Daniel34990) and [Judith Amigo](https://github.com/crocojude).
+
 ---
 
 ## Motivation
