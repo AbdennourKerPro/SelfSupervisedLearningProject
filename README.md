@@ -16,15 +16,15 @@ Medical image datasets are often limited in size and expensive to annotate. Self
 1. **Barlow Twins**  
    - A redundancy-reduction method that encourages embeddings of two augmented views of the same image to be highly correlated while minimizing redundancy between dimensions.  
    - Objective:  
-     $$
-     \mathcal{L} = \sum_i (1 - C_{ii})^2 + \lambda \sum_{i} \sum_{j \neq i} C_{ij}^2
-     $$
+
+     $$\mathcal{L} = \sum_i (1 - C_{ii})^2 + \lambda \sum_{i} \sum_{j \neq i} C_{ij}^2$$
+
      where $C$ is the cross-correlation matrix between embeddings.
 
 2. **SimCLR**  
    - A contrastive learning method that maximizes agreement between augmented views of the same image via a contrastive loss.  
    - Relies on a large batch size and normalized temperature-scaled cross-entropy loss (NT-Xent).
-    We define the cosine similarity between two embeddings \(z_i\) and \(z_j\) as:
+    We define the cosine similarity between two embeddings $z_i$ and $z_j$ as:
 
 $$
 \text{sim}(z_i, z_j) = \frac{z_i \cdot z_j}{\|z_i\| \, \|z_j\|}
@@ -32,9 +32,7 @@ $$
 
 The loss for a positive pair $(i,j)$ is given by:
 
-$$
-\ell_{i,j} = - \log \frac{\exp\left(\text{sim}(z_i, z_j)/\tau\right)}{\sum_{k=1}^{2N} \mathbf{1}_{[k \neq i]} \exp\left(\text{sim}(z_i, z_k)/\tau\right)}
-$$
+$$ \ell_{i,j} = - \log \frac{\exp\left(\text{sim}(z_i, z_j)/\tau\right)}{\sum_{k=1}^{2N} \mathbf{1}_{[k \neq i]} \exp\left(\text{sim}(z_i, z_k)/\tau\right)} $$
 
 where:
 - $\tau$ is the **temperature**,
@@ -43,9 +41,7 @@ where:
 
 The final loss is averaged over all positive pairs:
 
-$$
-\mathcal{L} = \frac{1}{2N} \sum_{i=1}^{2N} \ell_{i,j(i)}
-$$
+$$ \mathcal{L} = \frac{1}{2N} \sum_{i=1}^{2N} \ell_{i,j(i)} $$
 
 3. **Datasets: MedMNIST**  
    - A collection of lightweight benchmark datasets designed for biomedical image classification.  
